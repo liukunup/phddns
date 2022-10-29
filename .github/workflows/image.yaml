@@ -51,6 +51,7 @@ jobs:
           tags: |
             type=ref,event=branch
             type=raw,value=${{ env.HSK_VERSION }}
+            type=semver,pattern={{version}}
 
       - name: Build & Push Docker image
         uses: docker/build-push-action@v3
