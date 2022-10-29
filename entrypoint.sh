@@ -6,7 +6,8 @@
 # 执行`phddns status`来检查是否已经安装花生壳
 if ! phddns status; then
   # 安装花生壳
-  echo phddns_*.deb | dpkg -i
+  echo "Try to install phddns ..."
+  dpkg -i phddns_*.deb
 fi
 
 # 如果任何命令失败,则退出脚本(非零值)
