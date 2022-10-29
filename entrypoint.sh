@@ -20,8 +20,10 @@ phddns enable
 
 # 启动服务
 phddns start
+
 # 等待3秒
 sleep 3s
+
 # 查看状态
 phddns status
 
