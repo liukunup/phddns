@@ -80,4 +80,7 @@ docker tag <IMAGE ID> liukunup/phddns:<版本号>
 
 # 镜像推送
 docker push liukunup/phddns:<版本号>
+
+# 指定MacAddr/IPv4/IPv6的方法
+docker run -d --mac-address=xxx --ip=xxx --ip6=xxx --name=phddns liukunup/phddns:latest
 ```
