@@ -1,5 +1,9 @@
 # 花生壳(内网穿透) Docker版本
 
+访问[GitHub](https://github.com/liukunup/phddns)
+
+访问[DockerHub](https://hub.docker.com/r/liukunup/phddns)
+
 ## 官方信息
 
 花生壳[官网](https://hsk.oray.com/)
