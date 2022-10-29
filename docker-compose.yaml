@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  hsk:
+    image: liukunup/hsk:latest
+    container_name: hsk
+    hostname: hsk
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=en_US.UTF-8
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    mac_address: 'ab:cd:ef:12:34:56'  # 随机填写（务必修改）
