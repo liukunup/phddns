@@ -13,7 +13,7 @@
 1、拉取镜像
 
 ``` shell
-docker pull liukunup/hsk:latest
+docker pull liukunup/phddns:latest
 ```
 
 2、拉起容器
@@ -21,7 +21,7 @@ docker pull liukunup/hsk:latest
 > 注意: 必须修改填写`--mac-address`,相同的Mac地址会导致SN码相同,从而引发启动失败。
 
 ``` shell
-docker run -d --mac-address=ab:cd:ef:12:34:56 --name=hsk liukunup/hsk:latest
+docker run -d --mac-address=ab:cd:ef:12:34:56 --name=phddns liukunup/phddns:latest
 ```
 
 3、设置&使用
@@ -38,17 +38,17 @@ docker run -d --mac-address=ab:cd:ef:12:34:56 --name=hsk liukunup/hsk:latest
 docker login
 
 # 镜像构建
-docker build -t liukunup/hsk:latest .
+docker build -t liukunup/phddns:latest .
 
 # 镜像推送
-docker push liukunup/hsk:latest
+docker push liukunup/phddns:latest
 
 # 查看当前镜像的IMAGE ID
 docker images
 
 # 打上新版本标签
-docker tag <IMAGE ID> liukunup/hsk:<版本号>
+docker tag <IMAGE ID> liukunup/phddns:<版本号>
 
 # 镜像推送
-docker push liukunup/hsk:<版本号>
+docker push liukunup/phddns:<版本号>
 ```

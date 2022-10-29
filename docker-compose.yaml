@@ -2,10 +2,10 @@ version: "3"
 
 services:
 
-  hsk:
-    image: liukunup/hsk:latest
-    container_name: hsk
-    hostname: hsk
+  phddns:
+    image: liukunup/phddns:latest
+    container_name: phddns
+    hostname: phddns
     restart: always
     environment:
       - TZ=Asia/Shanghai
