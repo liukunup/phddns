@@ -18,10 +18,35 @@ docker pull liukunup/phddns:latest
 
 2、拉起容器
 
-> 注意: 必须修改填写`--mac-address`,相同的Mac地址会导致SN码相同,从而引发启动失败。
+> 注意: 务必修改`--mac-address`的Mac地址, 相同的Mac地址会导致SN码相同, 从而导致代理相互挤占。
+
+> 生成随机Mac地址的方法: `echo $RANDOM|md5sum|sed 's/../&:/g'|cut -c 1-17` (brew install md5sha1sum)
+
+- Docker CLI 启动方式
 
 ``` shell
 docker run -d --mac-address=ab:cd:ef:12:34:56 --name=phddns liukunup/phddns:latest
+```
+
+- Docker Compose 启动方式
+
+```yaml
+version: "3"
+
+services:
+
+  phddns:
+    image: liukunup/phddns:latest
+    container_name: phddns
+    hostname: phddns
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+      - LANG=en_US.UTF-8
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    mac_address: 'ab:cd:ef:12:34:56'  # 随机填写（务必修改）
 ```
 
 3、设置&使用
