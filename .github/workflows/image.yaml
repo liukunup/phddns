@@ -8,7 +8,7 @@ on:
       - 'v*'
 
 env:
-  PHDDNS_VERSION: 5.2.0
+  HSK_VERSION: 5.2.0
   DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_USERNAME }}/phddns
 
 jobs:
@@ -50,19 +50,19 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             type=ref,event=branch
-            type=raw,value=${{ env.PHDDNS_VERSION }}
+            type=raw,value=${{ env.HSK_VERSION }}
 
       - name: Build & Push Docker image
         uses: docker/build-push-action@v3
         with:
           context: .
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/i386
           file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            PHDDNS_VERSION=${{ env.PHDDNS_VERSION }}
+            HSK_VERSION=${{ env.HSK_VERSION }}
 
       - name: Update Docker Hub Repository Description
         uses: peter-evans/dockerhub-description@v2
