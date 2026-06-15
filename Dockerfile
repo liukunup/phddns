@@ -1,11 +1,11 @@
 # 基础镜像
-FROM ubuntu:focal
+FROM ubuntu:noble
 
 # 作者信息
 LABEL LiuKun="liukunup@outlook.com"
 
 # 花生壳 版本&架构
-ARG HSK_VERSION="5.2.0"
+ARG HSK_VERSION="5.3.0"
 ARG HSK_ARCH="amd64"
 
 # 时区 (可选)
